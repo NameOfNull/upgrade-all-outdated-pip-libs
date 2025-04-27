@@ -21,7 +21,7 @@ if __name__ == "__main__":
             package_name = line.split()[0]
             print(f"Updating {package_name}...")
             try:
-                subprocess.check_call(['pip', 'install', '--upgrade', '-i', 'https://pypi.tuna.tsinghua.edu.cn/simple/', package_name])
+                subprocess.check_call(['pip', 'install', '--upgrade', package_name])
             except subprocess.CalledProcessError as e:
                 print(f"Failed to update {package_name}: {e}")
     subprocess.call(["pause"], shell=True)
